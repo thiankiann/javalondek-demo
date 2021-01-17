@@ -25,11 +25,36 @@ public class HelloLambda {
                 System.out.println("inside method call");
             }
         });
+
+        // using lambda - super happy:)
+        handleRunner(() -> System.out.println("inside lambda call"));
+
+        // we're implementing method go() here!!!
+        Runner myFirstLambda = () -> {};
+        // expression has value, statement not (void)
+
+        Runner mySecondLambda = () -> {
+            System.out.println("Inside my second lambda");
+        };
+
+        Runner myThirdLambda = () -> System.out.println("my third lambda");
+
+        Runner myFourthLambda = () -> {
+            System.out.println("first text");
+            System.out.println("second text");
+        };
+        myFourthLambda.go();
+        myFourthLambda.go(4);
+        Runner.walk();
     }
 
     public static void handleRunner(Runner anyRunner) {
         System.out.println("calling handleRunner()");
 
         anyRunner.go();
+    }
+
+    public static void emptyMethod() {
+        return;
     }
 }
