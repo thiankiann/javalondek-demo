@@ -7,7 +7,8 @@ public class HelloLambda {
         maniekRunner.walk();
 
         Runner runner = new ManiekRunner();
-        runner.go();
+       // runner.go();  //1
+        handleRunner(runner);
     // runner.walk();   //- doesn't compile
 
     Runner anonymousRunner = new Runner() {                 // klasa anonimowa
@@ -16,7 +17,11 @@ public class HelloLambda {
             System.out.println("Anonymous runner");
         }
     } ;
-    anonymousRunner.go();
+    //anonymousRunner.go();  //2
+        handleRunner(anonymousRunner);
     }
-
+    public static void handleRunner(Runner anyRunner) {
+        System.out.println("handleRunner()");
+        anyRunner.go();
+    }
 }
