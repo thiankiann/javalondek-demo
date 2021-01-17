@@ -5,14 +5,14 @@ public class CalcDemo {
     public static void main(String[] args) {
         System.out.println("playing with calc lambdas");
 
-        Adder adder = (int a, int b) -> {
+        Adder<Integer> adder = (Integer a, Integer b) -> {
             return a + b;
         };
-        Adder adder2 = (first, second) -> {
+        Adder<Integer> adder2 = (first, second) -> {
 //            first.length(); - wrong type!!!!
             return first + second;
         };
-        Adder adder3 = (first, second) -> first + second;
+        Adder<Integer> adder3 = (first, second) -> first + second;
 
         StrangeOne strangeOne = (int a, int b) -> {
             return a + b;
@@ -26,10 +26,13 @@ public class CalcDemo {
             return a + b;
         };
 
-        Substraction substruction= (a, b)-> a-b;
-        Multiplication multiplication = (x, y) -> x * y;
-        Division div = (a,b) -> a/b;
+        Substraction<Integer> substruction= (a, b)-> a-b;
+        Multiplication<Integer> multiplication = (x, y) -> x * y;
+        Division<Double> div = (a,b) -> a/b;
 
         myAdder.addWithComment(5, 10, "should be 15");
+
+        Operation<Double> divisionOperation = (first, second) -> first/second;
+        Operation<Double> divisionOperation2 = (first, second) -> first*second;
     }
 }
