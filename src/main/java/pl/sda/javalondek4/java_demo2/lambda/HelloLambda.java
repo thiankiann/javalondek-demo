@@ -66,7 +66,9 @@ public class HelloLambda {
           System.out.println("first text");
           System.out.println("second text");
         };
-
+        myFourthLambda.go();
+        myFourthLambda.go(4);
+        Runner.walk();
 
 
     }
