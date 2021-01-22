@@ -33,23 +33,42 @@ public class HelloLambda {
         Runner runner = new ManiekRunner();
         handleRunner(runner);
 //        runner.walk(); - doesn't compile
-        // define anonymous class
-        Runner anonymousRunner = new Runner() {
-            @Override
-            public void go() {
-                System.out.println("Anonymous runner");
-            }
-        };
+       // define anonymous class
+            Runner anonymousRunner = new Runner() {
+                @Override
+                public void go() {
+                    System.out.println("Anonymous runner");
+                }
+            };
         handleRunner(anonymousRunner);
         // call handleRunner user anonymous class
+
         handleRunner(new Runner() {
             @Override
             public void go() {
                 System.out.println("inside method call");
             }
         });
-        // using lambda - super happy:)
+
+       // using lambda - super happy:)
         handleRunner(() -> System.out.println("inside lambda call"));
+
+        // we are implementing method go() here
+      Runner myFirstLambda = () -> {};
+
+      Runner mySecondLambda = () -> {
+          System.out.println("inside my second lambda");
+      };
+
+      Runner myThirdLambda =  () -> System.out.println("my third lambda");
+
+      Runner myFourthLambda = () -> {
+          System.out.println("first text");
+          System.out.println("second text");
+        };
+
+
+
     }
     public static void handleRunner(Runner anyRunner) {
         System.out.println("calling handleRunner()");
