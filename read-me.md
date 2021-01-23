@@ -12,3 +12,4 @@ git status
 git add .
 git commit -m "[tag] - message"
 git restore --staged file-name // zdejmij ze stage'a
+git checkout -b branch-name // przełącz na nowo utworzony branch
