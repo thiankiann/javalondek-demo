@@ -7,6 +7,11 @@ public class ManiekRunner implements Runner{
         System.out.println("Run Maniek run!");
 
     }
+    @Override
+    public void go( int speed) {
+        System.out.println("Maniek speed is: " + speed);
+
+    }
     public void walk() {
         System.out.println("Walk Maniek...");
 
