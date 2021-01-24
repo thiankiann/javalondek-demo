@@ -1,5 +1,7 @@
 package pl.sda.javalondek4.java_demo.optional.java7;
 
+import java.util.Optional;
+
 public class ComputerUtils {
 
     private ComputerUtils() {
@@ -28,6 +30,13 @@ public class ComputerUtils {
             }
         }
         return result;
+    }
+
+    public static String getGCModelWithJava8(Computer computer) {
+        return Optional.ofNullable(computer)
+            .map(comp -> comp.getGraphicsCard())
+            .map(graphicsCard -> graphicsCard.getModel())
+            .orElse("no model");
     }
 
     public static void main(String[] args) {

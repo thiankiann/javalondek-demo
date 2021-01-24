@@ -1,4 +1,4 @@
-package pl.sda.javalondek4.java_demo.optional.java7;
+package pl.sda.javalondek4.java_demo.optional.java8;
 
 public class ComputerUtils {
 
@@ -6,28 +6,8 @@ public class ComputerUtils {
         throw new UnsupportedOperationException("This class shouldn't be instantiated!!!");
     }
 
-    public static String getGraphicsCardModelFirstNaiveApproach(Computer computer) {
-        return computer.getGraphicsCard().getModel();
-    }
-
     public static String getGraphicsCardGoodApproach(Computer computer) {
-//        if (computer.getGraphicsCard() == null) {
-//            return null;
-//        } else {
-//            if (computer.getGraphicsCard().getModel() == null) {
-//                return null;
-//            } else {
-//                return computer.getGraphicsCard().getModel();
-//            }
-//        }
-        String result = null;
-        if (computer != null) {
-            GraphicsCard graphicsCard = computer.getGraphicsCard();
-            if (graphicsCard != null) {
-                result = graphicsCard.getModel();
-            }
-        }
-        return result;
+        return null;
     }
 
     public static void main(String[] args) {
@@ -36,9 +16,9 @@ public class ComputerUtils {
         Computer withUnknownModel = new Computer(new GraphicsCard(null));
         Computer personalComputer = new Computer(new GraphicsCard("nVidia RTX 380"));
 
-        getGraphicsCardModelFirstNaiveApproach(withoutGraphicsCard);
-        getGraphicsCardModelFirstNaiveApproach(withUnknownModel);
-        getGraphicsCardModelFirstNaiveApproach(personalComputer);
-        getGraphicsCardModelFirstNaiveApproach(nullComputer);
+        getGraphicsCardGoodApproach(withoutGraphicsCard);
+        getGraphicsCardGoodApproach(withUnknownModel);
+        getGraphicsCardGoodApproach(personalComputer);
+        getGraphicsCardGoodApproach(nullComputer);
     }
 }

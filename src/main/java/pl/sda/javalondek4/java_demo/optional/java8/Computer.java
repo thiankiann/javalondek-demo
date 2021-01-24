@@ -1,4 +1,6 @@
-package pl.sda.javalondek4.java_demo.optional.java7;
+package pl.sda.javalondek4.java_demo.optional.java8;
+
+import java.util.Optional;
 
 public class Computer {
 
@@ -8,8 +10,8 @@ public class Computer {
         this.graphicsCard = graphicsCard;
     }
 
-    public GraphicsCard getGraphicsCard() {
-        return graphicsCard;
+    public Optional<GraphicsCard> getGraphicsCard() {
+        return Optional.ofNullable(graphicsCard);
     }
 
     @Override
