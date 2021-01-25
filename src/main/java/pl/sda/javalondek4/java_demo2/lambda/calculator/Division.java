@@ -1,6 +1,6 @@
 package pl.sda.javalondek4.java_demo2.lambda.calculator;
 
-public interface Division {
+public interface Division<T> {
 
-    int div (int a , int b );
+    T div (T a , T b );
 }

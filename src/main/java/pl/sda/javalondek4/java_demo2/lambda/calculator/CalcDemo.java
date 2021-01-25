@@ -1,15 +1,13 @@
 package pl.sda.javalondek4.java_demo2.lambda.calculator;
 
-import org.w3c.dom.ls.LSOutput;
-
 public class CalcDemo {
     public static void main(String[] args) {
         System.out.println("playing with calc lambdas");
 
-        Adder adder =  (int a , int b) -> {
+        Adder<Integer> adder =  (Integer a , Integer b) -> {
             return a + b;
         };
-        Adder adder1 = (first, second) -> {
+        Adder<Integer> adder1 = (first, second) -> {
             return first + second;
         };
 
@@ -30,11 +28,13 @@ public class CalcDemo {
             //wydrukujmy
         myAdder.addWithComment(5,10,"should be 15") ;
 
-        Substraction substraction = (a ,b ) ->  a-b;
+        Subtraction<Integer> subtraction = (a ,b ) ->  a-b;
 
-        Mult mult = (a,b) -> a*b ;
+        Multiplication<Integer> mult = (a, b) -> a*b ;
 
-        Division division = (a,b) -> a/b;
+        Division<Integer> division = (a,b) -> a/b;
+
+        Operation<Double> operationDiv = (a,b) -> a/b;
 
     }
 }
