@@ -13,4 +13,14 @@ public class ExceptionGenerator {
             throw new NoNickExceptions("I have no nick yet");
         }
     }
+
+    public String nickWithRuntiimeException() throws NoNickRuntimeException{
+        Random random = new Random();
+
+        if(random.nextInt(100) % 2 ==1){
+            return "Maniek";
+        }else{
+            throw new NoNickRuntimeException("I have no nick yet");
+        }
+    }
 }
