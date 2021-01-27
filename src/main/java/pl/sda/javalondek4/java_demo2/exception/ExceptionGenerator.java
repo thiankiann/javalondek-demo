@@ -14,7 +14,7 @@ public class ExceptionGenerator {
         }
     }
 
-    public String nickWithRuntiimeException() throws NoNickRuntimeException{
+    public String nickWithRuntimeException() throws NoNickRuntimeException{
         Random random = new Random();
 
         if(random.nextInt(100) % 2 ==1){
