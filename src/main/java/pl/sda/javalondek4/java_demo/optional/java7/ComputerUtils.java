@@ -9,7 +9,9 @@ public class ComputerUtils {
     }
 
     public static String getGraphicsCardModelFirstNaiveApproach(Computer computer) {
-        return computer.getGraphicsCard().getModel();
+        return computer         // Computer
+            .getGraphicsCard()  // GraphicsCard
+            .getModel();        // String
     }
 
     public static String getGraphicsCardGoodApproach(Computer computer) {
