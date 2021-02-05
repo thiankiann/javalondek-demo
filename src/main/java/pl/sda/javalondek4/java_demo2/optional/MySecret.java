@@ -4,18 +4,21 @@ import java.util.Optional;
 
 import static java.util.Objects.nonNull;
 
-public class MySecret<T>{
-    T mySecret ;
+public class MySecret<T> {
+    T mySecret;
 
     public MySecret(T mySecret) {
+
         this.mySecret = mySecret;
     }
 
     public T getMySecret() {
+
         return mySecret;
     }
 
     public void setMySecret(T mySecret) {
+
         this.mySecret = mySecret;
     }
 
@@ -28,18 +31,18 @@ public class MySecret<T>{
 
     public static void main(String[] args) {
         MySecret<String> realOne = new MySecret<>("I like learning JVM technologies");
-        MySecret<String>  withNullContent= new MySecret<>(null);
+        MySecret<String> withNullContent = new MySecret<>(null);
 
         printSecretLenght(realOne);
         printSecretLenght(withNullContent);
     }
 
 
-    public static void printSecretLenght(MySecret<String> mySecret){
+    public static void printSecretLenght(MySecret<String> mySecret) {
 
-        int secretLength ; //= mySecret.getMySecret() != null ? mySecret.getMySecret().length() : 0;
+        int secretLength; //= mySecret.getMySecret() != null ? mySecret.getMySecret().length() : 0;
 
-            secretLength = nonNull(mySecret.getMySecret()) ? mySecret.getMySecret().length() : 0;
+        secretLength = nonNull(mySecret.getMySecret()) ? mySecret.getMySecret().length() : 0;
 
         /* to jest to samo co
         if(mySecret.getMySecret() != null) {
@@ -49,18 +52,19 @@ public class MySecret<T>{
         }
         */
 
-        System.out.println(" My Secret has: " + secretLength + "characters" );
+        System.out.println(" My Secret has: " + secretLength + "characters");
     }
+
     public static <T> void processSecret(T optional) {
 
-      //make optional from T
+        //make optional from T
         Optional<T> opt = Optional.ofNullable(optional);
 
-      // T unpacked = opt.get();  //ZLE!
+        // T unpacked = opt.get();  //ZLE!
         T unpacked;
-        if(opt.isPresent()){
+        if (opt.isPresent()) {
             unpacked = opt.get();
-        }else {
+        } else {
             unpacked = null;
         }
 

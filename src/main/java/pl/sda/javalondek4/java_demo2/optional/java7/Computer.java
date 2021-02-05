@@ -1,11 +1,15 @@
 package pl.sda.javalondek4.java_demo2.optional.java7;
 
 public class Computer {
+
     private GraphicsCard graphicsCard;
+
     public Computer(GraphicsCard graphicsCard) {
+
         this.graphicsCard = graphicsCard;
     }
     public GraphicsCard getGraphicsCard() {
+
         return graphicsCard;
     }
     @Override

@@ -4,11 +4,10 @@ public class ComputerUtils {
     private ComputerUtils() {
         throw new UnsupportedOperationException("This class shouldn't be instantiated!!!");
     }
-   public static String getGraphicsCardModelFirstNaiveApproach(Computer computer) {
-        return computer.getGraphicsCard().getModel();
-    }
-    public static String getGraphicsCardGoodApproach(Computer computer) {
 
+
+    public static String getGraphicsCardGoodApproach(Computer computer) {
+        return ""; //FIXME
     }
     public static void main(String[] args) {
         Computer nullComputer = null;
