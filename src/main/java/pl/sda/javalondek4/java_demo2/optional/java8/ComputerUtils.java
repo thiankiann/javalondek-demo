@@ -1,5 +1,9 @@
 package pl.sda.javalondek4.java_demo2.optional.java8;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 public class ComputerUtils {
     private ComputerUtils() {
         throw new UnsupportedOperationException("This class shouldn't be instantiated!!!");
@@ -7,7 +11,7 @@ public class ComputerUtils {
 
 
     public static String getGraphicsCardGoodApproach(Computer computer) {
-        return ""; //FIXME
+        return "";  //FIXME
     }
     public static void main(String[] args) {
         Computer nullComputer = null;

@@ -39,13 +39,32 @@ public class ComputerUtils {
             }
         }else System.out.println("no card Model");
         return graphicCardModel1 ;
+
+
+
+
     }
     public static String getGCModelWithJava8(Computer computer){
-      return Optional.ofNullable(computer)
-              .map(com -> computer.getGraphicsCard())
-              .map(graphicsCard -> graphicsCard.getModel())
-              .orElse("null");
 
+// Lekcja 5  - var -y w generykach
+
+        //        Optional<Computer> maybeComputer = Optional.ofNullable(computer);
+//        Optional<GraphicsCard> maybeGraphicCard = maybeComputer.map(comp -> comp.getGraphicsCard());
+//        Optional<String> maybeModel = maybeGraphicCard.map(graphicsCard -> graphicsCard.getModel());
+//        return Optional.ofNullable(computer)
+//            .map(comp -> comp.getGraphicsCard())
+//            .map(graphicsCard -> graphicsCard.getModel())
+//            .orElse("no model");
+        var maybeComputer = Optional.ofNullable(computer);
+        var maybeGraphicCard = maybeComputer.map(comp -> comp.getGraphicsCard());
+        var maybeModel = maybeGraphicCard.map(graphicsCard -> graphicsCard.getModel());
+        // another approach
+
+        var maybeModelOfGC = Optional.ofNullable(computer)
+                .map(comp -> comp.getGraphicsCard())
+                .map(graphicsCard -> graphicsCard.getModel());
+        maybeModelOfGC.orElse("no model");
+        return maybeModel.orElse("no model");
     }
 
     public static void main(String[] args) {

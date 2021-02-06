@@ -8,6 +8,7 @@ public class GraphicsCard {
         this.model = model;
     }
     public Optional<String> getModel() {
+
         return Optional.ofNullable(model);
     }
     @Override
