@@ -8,7 +8,8 @@ Git - good practices
     * nie powinniśmy usuwać nie zmergowanych branch'y, bo nie bedziemy mieli jak do nich wrocic
 
     * nie usuwamy branch'a na którym aktualnie się znajdujemy:)
-  
+    * fast forward nie zawsze jest możliwy - działa tylko w przypadku gdy jeden branch może "dogonić" drugi
+    * zawsze można wymusić commit mergujący
 * git flow - w skrócie
     * master - branch release'owy
     * develop - branch developerski
