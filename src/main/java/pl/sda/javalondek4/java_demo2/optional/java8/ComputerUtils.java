@@ -11,7 +11,37 @@ public class ComputerUtils {
 
 
     public static String getGraphicsCardGoodApproach(Computer computer) {
-        return "";  //FIXME
+        String result = Optional.ofNullable(computer)
+                // ugly code :)
+//            .map(comp -> {
+//                var maybeGc = comp.getGraphicsCard();
+//                if (maybeGc.isPresent()) {
+//                    return maybeGc.get();
+//                } else {
+//                    return null;
+//                })
+//            .map(comp -> comp.getGraphicsCard().get()) // very dangerous!!!!
+//            .map(comp -> comp.getGraphicsCard().orElse(null)) // can be ok...
+                .flatMap(comp -> comp.getGraphicsCard()) // if Optional inside Optional use flatMap
+                .flatMap(gc -> gc.getModel()) // my must provide mapping to Optional
+                .orElse("no model");
+
+        //the same but with map()  v.1
+        Optional.ofNullable(computer)
+                .map(comp -> comp.getGraphicsCard())
+                .orElse(Optional.empty())
+                .map(gc -> gc.getModel())
+                .orElse(Optional.empty())
+                .orElse("no model");
+
+        //v.2 a little bit prettier - with using var
+        var maybeGraphicsCard = Optional.ofNullable(computer)
+                .map(comp -> comp.getGraphicsCard())
+                .orElse(Optional.empty());
+        maybeGraphicsCard.map(gc -> gc.getModel())
+                .orElse(Optional.empty())
+                .orElse("no model");
+        return result;
     }
     public static void main(String[] args) {
         Computer nullComputer = null;
